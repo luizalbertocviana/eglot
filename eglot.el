@@ -2693,6 +2693,11 @@ If INTERACTIVE, prompt user for details."
   "Eclipse JDT breaks spec and replies with edits as arguments."
   (mapc #'eglot--apply-workspace-edit arguments))
 
+;; this function appears to be missing from project.el; this provides
+;; it so we can keep using an updated project.el
+(defun project-root (project)
+    (car (project-roots project)))
+
 (provide 'eglot)
 ;;; eglot.el ends here
 
